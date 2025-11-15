@@ -2,7 +2,7 @@
   <div>
     <h1 align="center">sweep</h1>
 <img width="2816" height="1536" alt="lazycommit" <img width="1024" height="419" alt="ChatGPT Image Nov 16, 2025, 12_27_49 AM" src="https://github.com/user-attachments/assets/93910730-d7f8-455f-9f01-18afe42712be" />
-" />
+
 </div>	 
 	
 <p>Fast zero-config CLI to list and clean unused JS/TS imports.</p>	
