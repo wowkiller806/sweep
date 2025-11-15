@@ -1,8 +1,16 @@
-# sweepp
+<div align="center">
+  <div>
+    <h1 align="center">sweep</h1>
+<img width="2816" height="1536" alt="lazycommit" <img width="1024" height="419" alt="ChatGPT Image Nov 16, 2025, 12_27_49 AM" src="https://github.com/user-attachments/assets/93910730-d7f8-455f-9f01-18afe42712be" />
+" />
+</div>	 
+	
+<p>Fast zero-config CLI to list and clean unused JS/TS imports.</p>	
 <a href="https://www.npmjs.com/package/sweep"><img src="https://img.shields.io/npm/v/sweepp" alt="Current version"></a>
 	<a href="https://github.com/piyushdhoka/sweep"><img src="https://img.shields.io/github/stars/piyushdhoka/sweep" alt="GitHub stars"></a>
 	<a href="https://github.com/piyushdhoka/sweep/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/sweepp" alt="License"></a>
-Fast zero-config CLI to list and clean unused JS/TS imports.
+</div>
+
 
 ## Why?
 Large JavaScript/TypeScript codebases accumulate **dead imports** after refactors:
