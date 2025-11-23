@@ -1,6 +1,6 @@
 {
   "name": "sweepp",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Zero-config fast CLI to sweep unused JS/TS imports & detect unused code (heuristic) with monorepo support.",
   "license": "MIT",
   "author": "Piyush Dhoka",
