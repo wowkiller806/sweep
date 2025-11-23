@@ -47,20 +47,30 @@ export const DOCS_DATA: DocSection[] = [
           Codebases grow. <span className="text-accent decoration-accent/30 underline decoration-1 underline-offset-4">Cruft shouldn't</span>.
         </p>
         <p className="text-lg text-clay-400 leading-relaxed font-light">
-          <strong className="text-white font-semibold">sweepp</strong> is a fast, zero-config CLI tool designed to keep your JavaScript and TypeScript projects clean. 
+          <strong className="text-white font-semibold">sweepp</strong> is a fast, zero-config CLI tool designed to keep your JavaScript and TypeScript projects clean.
           It analyzes your AST to safely list and remove unused imports and detect dead code, supporting everything from single files to complex monorepos.
         </p>
-        
+
         {/* Aesthetic "Latest Release" Badge */}
         <div className="inline-flex items-center gap-4 p-1.5 pr-5 bg-surface-highlight/50 backdrop-blur-md border border-white/5 rounded-full shadow-lg hover:border-accent/20 transition-colors cursor-default group">
-           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-surface-card border border-white/10 group-hover:border-accent/30 transition-colors">
-              <Sparkles className="w-4 h-4 text-accent" />
-           </div>
-           <div className="flex flex-col">
-              <span className="text-[10px] font-bold text-clay-500 uppercase tracking-widest leading-none mb-1">Latest Release</span>
-              <span className="text-sm font-mono text-clay-200 leading-none">v2.0.0</span>
-           </div>
-           <div className="ml-2 w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)] animate-pulse"></div>
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-surface-card border border-white/10 group-hover:border-accent/30 transition-colors">
+            <Sparkles className="w-4 h-4 text-accent" />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-[10px] font-bold text-clay-500 uppercase tracking-widest leading-none mb-1">Latest Release</span>
+            <span className="text-sm font-mono text-clay-200 leading-none">v2.0.0</span>
+          </div>
+          <div className="ml-2 w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)] animate-pulse"></div>
+        </div>
+
+        {/* Hero Image */}
+        <div className="mt-8 rounded-xl overflow-hidden shadow-2xl border border-white/10 group relative">
+          <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <img
+            src="/sweep.png"
+            alt="Sweep Interface"
+            className="w-full h-auto object-cover"
+          />
         </div>
       </div>
     ),
@@ -71,7 +81,7 @@ export const DOCS_DATA: DocSection[] = [
     content: (
       <div className="space-y-8">
         <p>The minimum supported version of Node.js is <strong>v18</strong>.</p>
-        
+
         <div className="grid gap-6">
           <div className="space-y-2">
             <span className="text-xs font-mono text-clay-500 uppercase tracking-wider">NPM / Yarn / PNPM</span>
@@ -90,7 +100,7 @@ export const DOCS_DATA: DocSection[] = [
           <div className="space-y-2">
             <span className="text-xs font-mono text-clay-500 uppercase tracking-wider">Homebrew (macOS/Linux)</span>
             <div className="relative group">
-               <div className="relative flex flex-col justify-center bg-[#0E0D0C] p-5 rounded-xl border border-white/5 font-mono text-sm text-clay-200 shadow-xl hover:border-white/10 transition-colors gap-2">
+              <div className="relative flex flex-col justify-center bg-[#0E0D0C] p-5 rounded-xl border border-white/5 font-mono text-sm text-clay-200 shadow-xl hover:border-white/10 transition-colors gap-2">
                 <span className="flex gap-3">
                   <span className="text-clay-600 select-none">$</span>
                   brew tap piyushdhoka/sweep
@@ -114,9 +124,9 @@ export const DOCS_DATA: DocSection[] = [
         <p>
           Sweep exposes a simple CLI with three main modes: <code className="text-accent">list</code>, <code className="text-accent">clean</code>, and <code className="text-accent">unuse</code>.
         </p>
-        
+
         <div className="space-y-8">
-          
+
           {/* List Section */}
           <div>
             <h3 className="text-white text-lg font-medium mb-4">List Unused Imports</h3>
@@ -128,10 +138,10 @@ export const DOCS_DATA: DocSection[] = [
               </div>
               <div className="p-6 overflow-x-auto">
                 <code className="text-sm font-mono leading-relaxed">
-                  <span className="text-clay-500"># Scan current directory</span><br/>
-                  <span className="text-accent">sweepp</span> list .<br/>
-                  <br/>
-                  <span className="text-clay-500"># With options</span><br/>
+                  <span className="text-clay-500"># Scan current directory</span><br />
+                  <span className="text-accent">sweepp</span> list .<br />
+                  <br />
+                  <span className="text-clay-500"># With options</span><br />
                   <span className="text-accent">sweepp</span> list . --ext ts,tsx --ignore dist
                 </code>
               </div>
@@ -144,7 +154,7 @@ export const DOCS_DATA: DocSection[] = [
             <pre className="!mt-0 !bg-[#0E0D0C] !p-0 !border-0 overflow-hidden rounded-2xl shadow-2xl">
               <div className="p-6 overflow-x-auto">
                 <code className="text-sm font-mono leading-relaxed">
-                  <span className="text-clay-500"># Remove unused imports automatically</span><br/>
+                  <span className="text-clay-500"># Remove unused imports automatically</span><br />
                   <span className="text-accent">sweepp</span> clean
                 </code>
               </div>
@@ -157,7 +167,7 @@ export const DOCS_DATA: DocSection[] = [
             <pre className="!mt-0 !bg-[#0E0D0C] !p-0 !border-0 overflow-hidden rounded-2xl shadow-2xl">
               <div className="p-6 overflow-x-auto">
                 <code className="text-sm font-mono leading-relaxed">
-                  <span className="text-clay-500"># Find unused variables, functions, and classes</span><br/>
+                  <span className="text-clay-500"># Find unused variables, functions, and classes</span><br />
                   <span className="text-accent">sweepp</span> unuse
                 </code>
               </div>
@@ -174,12 +184,12 @@ export const DOCS_DATA: DocSection[] = [
     content: (
       <div className="space-y-8">
         <p>Customize the behavior of the sweeper.</p>
-        
+
         <div className="grid gap-4">
           <div className="p-5 rounded-xl bg-surface-card border border-white/5 hover:border-white/10 transition-colors">
             <div className="flex flex-col md:flex-row md:items-center gap-3 mb-2">
-               <code className="text-accent text-sm font-bold bg-transparent border-0 p-0">--ext &lt;list&gt;</code>
-               <span className="hidden md:block h-px flex-1 bg-white/5"></span>
+              <code className="text-accent text-sm font-bold bg-transparent border-0 p-0">--ext &lt;list&gt;</code>
+              <span className="hidden md:block h-px flex-1 bg-white/5"></span>
             </div>
             <p className="text-sm text-clay-400 mb-2">Comma-separated file extensions to include.</p>
             <div className="text-xs font-mono text-clay-600">Default: ts,tsx,js,jsx</div>
@@ -187,8 +197,8 @@ export const DOCS_DATA: DocSection[] = [
 
           <div className="p-5 rounded-xl bg-surface-card border border-white/5 hover:border-white/10 transition-colors">
             <div className="flex flex-col md:flex-row md:items-center gap-3 mb-2">
-               <code className="text-accent text-sm font-bold bg-transparent border-0 p-0">--ignore &lt;list&gt;</code>
-               <span className="hidden md:block h-px flex-1 bg-white/5"></span>
+              <code className="text-accent text-sm font-bold bg-transparent border-0 p-0">--ignore &lt;list&gt;</code>
+              <span className="hidden md:block h-px flex-1 bg-white/5"></span>
             </div>
             <p className="text-sm text-clay-400 mb-2">Comma-separated directories to ignore.</p>
             <div className="text-xs font-mono text-clay-600">Default: node_modules</div>
@@ -196,8 +206,8 @@ export const DOCS_DATA: DocSection[] = [
 
           <div className="p-5 rounded-xl bg-surface-card border border-white/5 hover:border-white/10 transition-colors">
             <div className="flex flex-col md:flex-row md:items-center gap-3 mb-2">
-               <code className="text-accent text-sm font-bold bg-transparent border-0 p-0">--check-local</code>
-               <span className="hidden md:block h-px flex-1 bg-white/5"></span>
+              <code className="text-accent text-sm font-bold bg-transparent border-0 p-0">--check-local</code>
+              <span className="hidden md:block h-px flex-1 bg-white/5"></span>
             </div>
             <p className="text-sm text-clay-400">Check if local imports exist in project. Supports path aliases from tsconfig.</p>
           </div>
@@ -211,14 +221,14 @@ export const DOCS_DATA: DocSection[] = [
     content: (
       <div className="space-y-12">
         <div className="space-y-8">
-          
+
           <div className="group">
             <h3 className="flex items-center gap-3 !mt-0 !mb-4 text-white group-hover:text-accent transition-colors">
               <span className="w-1.5 h-1.5 rounded-full bg-clay-600 group-hover:bg-accent transition-colors"></span>
               No unused imports detected?
             </h3>
             <p className="pl-5 border-l border-white/5">
-              Ensure your file extensions match the default list (ts, tsx, js, jsx) or use the <code className="text-accent">--ext</code> flag. 
+              Ensure your file extensions match the default list (ts, tsx, js, jsx) or use the <code className="text-accent">--ext</code> flag.
               Also check that your files aren't in an ignored directory.
             </p>
           </div>
@@ -229,8 +239,8 @@ export const DOCS_DATA: DocSection[] = [
               Output includes system folders?
             </h3>
             <p className="pl-5 border-l border-white/5">
-               Use the <code className="text-accent">--ignore</code> option to add specific folders to the exclusion list. 
-               By default, only node_modules is ignored.
+              Use the <code className="text-accent">--ignore</code> option to add specific folders to the exclusion list.
+              By default, only node_modules is ignored.
             </p>
           </div>
 
@@ -240,7 +250,7 @@ export const DOCS_DATA: DocSection[] = [
               How does it handle Monorepos?
             </h3>
             <p className="pl-5 border-l border-white/5">
-              sweepp automatically detects workspace configurations (pnpm, yarn, turbo) and resolves aliases defined in <code className="text-accent">tsconfig.json</code>. 
+              sweepp automatically detects workspace configurations (pnpm, yarn, turbo) and resolves aliases defined in <code className="text-accent">tsconfig.json</code>.
               It treats <code>workspace:*</code> dependencies correctly.
             </p>
           </div>
@@ -251,7 +261,7 @@ export const DOCS_DATA: DocSection[] = [
               Is it safe to run clean?
             </h3>
             <p className="pl-5 border-l border-white/5">
-              Yes. It uses safe AST transformation. However, side-effect imports (e.g., <code className="text-accent">import 'polyfill'</code>) are preserved. 
+              Yes. It uses safe AST transformation. However, side-effect imports (e.g., <code className="text-accent">import 'polyfill'</code>) are preserved.
               Dynamic usage might sometimes evade detection, so we recommend committing your changes before running <code className="text-accent">clean</code>.
             </p>
           </div>
