@@ -13,7 +13,7 @@ export async function discoverFiles(patternOrDir: string, opts: DiscoverOptions)
   const extsPattern = opts.extensions.map(e => e.startsWith('.') ? e.slice(1) : e).join(',');
 
   // Always ignore node_modules and .git
-  const defaultIgnore = ['**/node_modules/**', '**/.git/**'];
+  const defaultIgnore = ['**/node_modules/**', '**/.git/**', '**/*.d.ts'];
   const userIgnore = opts.ignore.map(i => i.replace(/\\/g, '/'));
   const ignore = [...defaultIgnore, ...userIgnore];
 
