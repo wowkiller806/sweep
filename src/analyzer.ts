@@ -94,6 +94,12 @@ export async function analyzeAndClean(
   }
 
   const used = collectUsedIdentifiers(ast);
+  // Detect presence of JSX so we can safely retain React default import
+  let hasJSX = false;
+  traverse(ast, {
+    JSXElement() { hasJSX = true; },
+    JSXFragment() { hasJSX = true; }
+  });
   const removed: RemovedImportInfo[] = [];
   let originalImportDecls = 0;
   
@@ -145,7 +151,10 @@ export async function analyzeAndClean(
           }
         } else if (t.isImportDefaultSpecifier(spec)) {
           const localName = spec.local.name;
-          if (!used.has(localName)) {
+          // If JSX is present, retain React default import even if identifier unused (new JSX transform)
+          if (importSource === 'react' && hasJSX) {
+            remaining.push(spec);
+          } else if (!used.has(localName)) {
             removedNames.push(localName);
           } else {
             remaining.push(spec);

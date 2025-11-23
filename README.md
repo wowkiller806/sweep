@@ -5,7 +5,7 @@
 
 </div>	 
 	
-<p>Fast zero-config CLI to list and clean unused JS/TS imports.</p>	
+<p>Fast zero-config CLI to list & clean unused JS/TS imports and detect unused code.</p>
 <a href="https://www.npmjs.com/package/sweepp"><img src="https://img.shields.io/npm/v/sweepp" alt="Current version"></a>
 	<a href="https://github.com/piyushdhoka/sweep"><img src="https://img.shields.io/github/stars/piyushdhoka/sweep" alt="GitHub stars"></a>
 	<a href="https://github.com/piyushdhoka/sweep/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/sweepp" alt="License"></a>
@@ -25,6 +25,7 @@ Large JavaScript/TypeScript codebases accumulate **dead imports** after refactor
 - Zero config – run instantly
 - List unused import specifiers (TS/JS/JSX/TSX)
 - Safe clean mode removes them
+- Detect unused code candidates (functions, classes, variables, types, interfaces) – non destructive preview
 - Structured table output for easy viewing
 - Fast AST parsing (Babel; SWC planned)
 - Keeps side-effect imports (`import 'polyfill';`)
@@ -40,36 +41,23 @@ npm install --save-dev sweepp
 ```
 
 ## Usage
-Global commands: `sweepp` or `swp` (shorthand)
-```bash
-# List unused imports (default)
+
+### Short commands
+
+```sh
 sweepp .
-# or use the shorthand
-swp .
+swp
+list
+clean
+unuse
+version
+```
 
-# Explicit list subcommand (same as default)
-sweepp list .
-swp list .
+You can use options with list/clean/unuse:
 
-# List with local import checking (removes imports from non-existent files)
-sweepp list . --check-local
-swp list . --check-local
-
-# Clean unused imports (modifies files)
-sweepp clean .
-swp clean .
-
-# Clean with local import checking
-sweepp clean . --check-local
-swp clean . --check-local
-
-# Set extensions / ignores
+```sh
 sweepp list . --ext ts,tsx,js --ignore dist,build
 swp list . --ext ts,tsx,js --ignore dist,build
-
-# Show version
-sweepp version
-swp version
 ```
 
 ## Options
@@ -172,11 +160,13 @@ console.log(result.removed);
 - Dynamic access patterns may evade detection
 - Type-only imports counted if referenced
 - Side-effect imports preserved
+- Heuristic unused code detection: Next.js `pages/` & `app/` route exports treated as used; namespace imports mark all exports used
+- Re-export chains & default export usage not fully analyzed yet; review before manual removal
 - Babel parser first; SWC migration planned
 
 ## Roadmap
 - SWC for performance
-- Remove unused exports / variables
+- Improve unused code graph (default exports, re-exports, dynamic usage)
 - Config file support
 - VS Code extension
 - Git diff only mode

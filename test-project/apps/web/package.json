@@ -1,7 +1,0 @@
-{
-  "name": "@myorg/web",
-  "version": "1.0.0",
-  "dependencies": {
-    "@myorg/utils": "workspace:*"
-  }
-}
