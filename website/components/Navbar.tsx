@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from '../types';
 import { Github, Sparkles } from 'lucide-react';
 import { GITHUB_URL, PACKAGE_NAME } from '../constants';
+import DownloadCount from './DownloadCount';
 
 interface NavbarProps {
   currentView: View;
@@ -49,6 +50,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onChangeView }) => {
           </button>
         </div>
 
+        <DownloadCount />
+
         <a
           href={GITHUB_URL}
           target="_blank"
@@ -58,8 +61,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onChangeView }) => {
         >
           <Github className="w-4 h-4" />
         </a>
-      </nav>
-    </div>
+      </nav >
+    </div >
   );
 };
 
